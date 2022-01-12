@@ -32,9 +32,19 @@ class FoodsController < ApplicationController
     end
   end
 
+  def delete
+    @food = Food.find_by_id(params[:id])
+    if @food.destroy
+      flash[:success] = 'Food destroyed successfully'
+    else
+      flash[:error] = 'Error: Food could not be destroyed'
+    end
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def foods_params
-    params.require(:food).permit(:user_id, :name, :measurement_unit, :price)
+    params.require(:food).permit(:id, :user_id, :name, :measurement_unit, :price)
   end
 end
