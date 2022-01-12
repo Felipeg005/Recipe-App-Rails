@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
     @user = current_user
     if Food.new(foods_params).invalid?
       flash[:notice] = 'The Food was not saved for incorrect data'
-      redirect_to "/foods/new/"
+      redirect_to '/foods/new/'
     else
       @food = Food.create!(foods_params)
       respond_to do |format|
@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
             # success message
             flash[:success] = 'Food saved successfully'
             # redirect to index
-            redirect_to "/foods/"
+            redirect_to '/foods/'
           else
             # error message
             flash.now[:error] = 'Error:  Food could not be saved'
