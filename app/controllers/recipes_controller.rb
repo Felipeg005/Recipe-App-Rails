@@ -3,6 +3,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def show
+    @recipe = Recipe.find_by_id(params[:recipe_id])
+  end
+
   def new
     @recipe = Recipe.new
   end
@@ -30,6 +34,16 @@ class RecipesController < ApplicationController
         end
       end
     end
+  end
+
+  def delete
+    @recipe = Recipe.find_by_id(params[:id])
+    if @recipe.destroy
+      flash[:success] = 'Recipe destroyed successfully'
+    else
+      flash[:error] = 'Error: Recipe could not be destroyed'
+    end
+    redirect_back(fallback_location: root_path)
   end
 
   private

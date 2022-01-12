@@ -1,0 +1,22 @@
+<h1>Recipe # <%= @recipe.id %></h1>
+<h2>Preparation Time: <%= @recipe.preparation_time %> Hours</h2>
+<h2>Public: <%= @recipe.public %></h2>
+<h2>Cooking Time: <%= @recipe.cooking_time %> Hours</h2>
+<p>Please follow these steps: <%= @recipe.description %></p>
+<a href="<%= recipe_foods_new_path %>">Add New Food</a>
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+  <% @recipe_foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %>$</td>
+      <td><%= button_to "Delete", delete_food_path, params: { id: food.id } , method: :post %></td>
+    </tr>
+  <% end %>
+</table>
