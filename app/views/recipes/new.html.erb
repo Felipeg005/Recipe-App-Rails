@@ -10,10 +10,10 @@
     <%= f.text_field :name %><br>
 
     <%= f.label :preparation_time %><br>
-    <%= f.text_field :preparation_time %><br>
+    <%= f.number_field :preparation_time, placeholder: 'Hours', step: :any %><br>
 
     <%= f.label :cooking_time %><br>
-    <%= f.text_field :cooking_time %><br>
+    <%= f.number_field :cooking_time, placeholder: 'Hours', step: :any %><br>
 
     <%= f.label :description %><br>
     <%= f.text_field :description %><br>

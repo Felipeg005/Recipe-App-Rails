@@ -4,7 +4,7 @@ class CreateFoods < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.string :name
       t.string :measurement_unit
-      t.integer :price
+      t.decimal :price
 
       t.timestamps
     end
