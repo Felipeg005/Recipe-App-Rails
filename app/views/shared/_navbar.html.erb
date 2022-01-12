@@ -8,6 +8,18 @@
     <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
             <li class="nav-item">
+                <%= link_to 'Foods', foods_path, method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Recipes', recipes_path, method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Public Recipes', public_recipes_path, method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Shopping List', shopping_list_path, method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
                 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
             </li>
         <% else %>
