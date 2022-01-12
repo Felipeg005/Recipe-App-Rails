@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.integer "user_id"
     t.string "name"
     t.integer "preparation_time"
-    t.integer "coocking_time"
+    t.integer "cooking_time"
     t.string "description"
     t.boolean "public"
     t.datetime "created_at", precision: 6, null: false

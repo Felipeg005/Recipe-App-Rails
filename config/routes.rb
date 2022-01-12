@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'public_recipes', to: 'recipes#show', as: 'public_recipes'
   get 'general_shoping_list', to: 'recipes#index', as: 'shopping_list'
   get 'foods/new', to: 'foods#new', as: 'foods_new'
+  get 'recipes/new', to: 'recipes#new', as: 'recipes_new'
 
   post 'foods/new', to: 'foods#create', as: 'create_new_food'
   post 'foods/delete', to: 'foods#delete', as: 'delete_food'
+  post 'recipes/new', to: 'recipes#create', as: 'create_new_recipe'
+  post 'recipes/delete', to: 'recipes#delete', as: 'delete_recipe'
 end
