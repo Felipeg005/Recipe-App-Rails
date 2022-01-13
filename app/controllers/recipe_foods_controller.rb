@@ -45,10 +45,4 @@ class RecipeFoodsController < ApplicationController
     end
     redirect_back(fallback_location: root_path)
   end
-  
-  # private
-
-  # def recipe_foods_params
-  #   params.require(:recipe_foods).permit(:food_id, :recipe_id, :quantity)
-  # end
 end

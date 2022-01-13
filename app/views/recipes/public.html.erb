@@ -1,0 +1,12 @@
+<h1>public recipes</h1>
+<% @recipes.each do |recipe| %>
+  <% if recipe.public %>
+    <a href="/recipes/<%= recipe.id %>">
+    <div class="recipe-container">
+      <h2><%= recipe.name %></h2>
+      <h2>By: <%= User.find(recipe.user_id).name %></h2>
+      <p><%= @recipe_foods.where(recipe_id: recipe.id).count %></p>
+    </div>
+    </a>
+  <% end %>
+<% end %>

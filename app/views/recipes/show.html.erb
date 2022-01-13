@@ -3,7 +3,9 @@
 <h2>Public: <%= @recipe.public %></h2>
 <h2>Cooking Time: <%= @recipe.cooking_time %> Hours</h2>
 <p>Please follow these steps: <%= @recipe.description %></p>
-<a href="<%= recipe_foods_new_path %>">Add New Food</a>
+<% if @recipe.user_id == current_user.id %>
+  <a href="<%= recipe_foods_new_path %>">Add New Food</a>
+<% end %>
 <table>
   <tr>
     <th>Food</th>
@@ -12,11 +14,17 @@
     <th>Actions</th>
   </tr>
   <% @recipe_foods.each do |food| %>
+    <% if @recipe.id == food.recipe_id %>
     <tr>
       <td><%= Food.find_by_id(food.food_id).name %></td>
       <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
       <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
-      <td><%= button_to "Delete", delete_recipe_food_path, params: { food_id: food.food_id, recipe_id: food.recipe_id } , method: :post %></td>
+      <% if @recipe.user_id == current_user.id %>
+        <td><%= button_to "Delete", delete_recipe_food_path, params: { food_id: food.food_id, recipe_id: food.recipe_id } , method: :post %></td>
+      <% else %>
+        <td><p>Only owner can delete this Recipe</p></td>
+      <% end %>
     </tr>
+    <% end %>
   <% end %>
 </table>

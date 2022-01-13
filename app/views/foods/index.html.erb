@@ -12,7 +12,11 @@
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
       <td>$<%= food.price %></td>
+      <% if food.user_id == current_user.id %>
       <td><%= button_to "Delete", delete_food_path, params: { id: food.id } , method: :post %></td>
+      <% else %>
+        <td><p>Only owner can delete this food</p></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

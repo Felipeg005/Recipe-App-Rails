@@ -8,6 +8,11 @@ class RecipesController < ApplicationController
     @recipe_foods = RecipeFood.all
   end
 
+  def public
+    @recipes = Recipe.all
+    @recipe_foods = RecipeFood.all
+  end
+
   def new
     @recipe = Recipe.new
   end
