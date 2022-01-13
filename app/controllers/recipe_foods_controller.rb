@@ -35,6 +35,16 @@ class RecipeFoodsController < ApplicationController
       end
     end
   end
+
+  def delete
+    @recipe_food = RecipeFood.find_by(recipe_id: params[:recipe_id], food_id: params[:food_id])
+    if @recipe_food.destroy
+      flash[:success] = 'Recipe destroyed successfully'
+    else
+      flash[:error] = 'Error: Recipe could not be destroyed'
+    end
+    redirect_back(fallback_location: root_path)
+  end
   
   # private
 

@@ -16,7 +16,7 @@
       <td><%= Food.find_by_id(food.food_id).name %></td>
       <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
       <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
-      <td>delete</td>
+      <td><%= button_to "Delete", delete_recipe_food_path, params: { food_id: food.food_id, recipe_id: food.recipe_id } , method: :post %></td>
     </tr>
   <% end %>
 </table>
