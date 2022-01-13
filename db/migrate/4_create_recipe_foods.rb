@@ -3,7 +3,7 @@ class CreateRecipeFoods < ActiveRecord::Migration[6.1]
     create_table :recipe_foods do |t|
       t.integer :recipe_id
       t.integer :food_id
-      t.string :quantity
+      t.decimal :quantity
 
       t.timestamps
     end

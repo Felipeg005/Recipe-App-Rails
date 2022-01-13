@@ -13,10 +13,10 @@
   </tr>
   <% @recipe_foods.each do |food| %>
     <tr>
-      <td><%= food.name %></td>
-      <td><%= food.measurement_unit %></td>
-      <td><%= food.price %>$</td>
-      <td><%= button_to "Delete", delete_food_path, params: { id: food.id } , method: :post %></td>
+      <td><%= Food.find_by_id(food.food_id).name %></td>
+      <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
+      <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
+      <td>delete</td>
     </tr>
   <% end %>
 </table>
