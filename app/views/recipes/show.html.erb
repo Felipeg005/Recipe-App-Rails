@@ -23,7 +23,7 @@
       <% if @recipe.user_id == current_user.id %>
         <td><%= button_to "Delete", delete_recipe_food_path, params: { food_id: food.food_id, recipe_id: food.recipe_id } , method: :post %></td>
       <% else %>
-        <td><p>Only owner can delete this Recipe</p></td>
+        <td><p>Only owner can delete this recipe food</p></td>
       <% end %>
     </tr>
     <% end %>

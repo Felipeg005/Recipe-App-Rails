@@ -26,6 +26,12 @@ RSpec.describe RecipesController, type: :feature do
       expect(page).to have_selector('.button_to')
     end
 
+    it 'checks when click on recipe redirects to show recipe' do
+      visit '/recipes/'
+      click_on ('Panna cotta')
+      expect(page).to have_current_path('/recipes/1')
+    end
+
     describe 'Testing with other user' do
       before(:each) do
         visit '/users/sign_out'
