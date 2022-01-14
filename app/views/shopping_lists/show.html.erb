@@ -1,1 +1,17 @@
 <h1>Recipe Shopping List</h1>
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+  </tr>
+  <% @recipe_foods.each do |food| %>
+    <% if @recipe.id == food.recipe_id %>
+    <tr>
+      <td><%= Food.find_by_id(food.food_id).name %></td>
+      <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
+      <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

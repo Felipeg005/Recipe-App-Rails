@@ -5,7 +5,7 @@
 <p>Please follow these steps: <%= @recipe.description %></p>
 <% if @recipe.user_id == current_user.id %>
   <a href="<%= recipe_foods_new_path %>">Add New Food</a>
-  <a href="<%= recipe_shopping_list_path %>">Generate shopping list</a>
+  <a href="/general_shopping_list/<%= @recipe.id %>">Generate shopping list</a>
 <% end %>
 <table>
   <tr>
