@@ -28,7 +28,7 @@ RSpec.describe RecipesController, type: :feature do
 
     it 'checks when click on recipe redirects to show recipe' do
       visit '/recipes/'
-      click_on ('Panna cotta')
+      click_on('Panna cotta')
       expect(page).to have_current_path('/recipes/1')
     end
 

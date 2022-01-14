@@ -15,7 +15,8 @@ RSpec.describe UsersController, type: :feature do
       expect(page).to have_content('Log in')
     end
 
-    it 'checks if click the submit button without filling in the username and the password, I get a detailed error' do
+    it 'checks if click the submit button without
+    filling in the username and the password, I get a detailed error' do
       visit '/users/sign_in'
       within('#new_user') do
         fill_in 'user_email', with: '2@gmail.com'
@@ -25,7 +26,8 @@ RSpec.describe UsersController, type: :feature do
       expect(page).to have_content('Invalid Email or password')
     end
 
-    it 'checks if click the submit button after filling in the username and the password with incorrect data, I get a detailed error' do
+    it 'checks if click the submit button after filling in the username
+    and the password with incorrect data, I get a detailed error' do
       visit '/users/sign_in'
       within('#new_user') do
         fill_in 'user_email', with: 'w@gmail.com'
@@ -35,7 +37,8 @@ RSpec.describe UsersController, type: :feature do
       expect(page).to have_content('Invalid Email or password')
     end
 
-    it 'checks if click the submit button after filling in the username and the password with correct data, I am redirected to the root page' do
+    it 'checks if click the submit button after filling in the username
+    and the password with correct data, I am redirected to the root page' do
       visit '/users/sign_in'
       within('#new_user') do
         fill_in 'user_email', with: 'rupert@gmail.com'
