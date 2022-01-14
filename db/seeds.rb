@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: 'Rupert', email: 'rupert@gmail.com', password: '1234567')
+User.create(name: 'Elisa', email: 'elisa@gmail.com', password: '1234567')
 Food.create(user_id: 1, name: 'Apple', measurement_unit: 'grams', price: 5)
-Food.create(user_id: 1, name: 'orange', measurement_unit: 'grams', price: 3)
-Recipe.create(user_id: 1, name: 'panna cotta', preparation_time: 1.4, cooking_time: 3, description: 'cook the bread 5 minutes', public: false)
+Food.create(user_id: 1, name: 'Orange', measurement_unit: 'grams', price: 3)
+Recipe.create(user_id: 1, name: 'Panna cotta', preparation_time: 1.4, cooking_time: 3, description: 'cook the bread 5 minutes', public: false)
+Recipe.create(user_id: 1, name: 'Cheese Cake', preparation_time: 2, cooking_time: 3.1, description: 'cook the cheese 5 minutes', public: true)
