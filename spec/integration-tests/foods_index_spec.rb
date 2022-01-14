@@ -19,7 +19,7 @@ RSpec.describe FoodsController, type: :feature do
     it 'checks if can see a row for each food' do
       visit '/foods/'
       expect(page).to have_content('Apple')
-      expect(page).to have_content('orange')
+      expect(page).to have_content('Orange')
     end
 
     it 'checks if can see all header columns' do
@@ -36,7 +36,9 @@ RSpec.describe FoodsController, type: :feature do
     end
 
     describe 'Testing with other user' do
-      visit '/users/sign_out'
+      before(:each) do
+        visit '/users/sign_out'
+      end
       it 'checks if delete button its blocked for users that doesnt own the food' do
         visit '/users/sign_in'
         within('#new_user') do
