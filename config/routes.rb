@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get 'recipes/:recipe_id', to: 'recipes#show'
   get '/public_recipes', to: 'recipes#public', as: 'public_recipes'
   get 'recipes/:recipe_id/new', to: 'recipe_foods#new', as: 'recipe_foods_new'
-  get 'general_shoping_list', to: 'recipes#index', as: 'shopping_list'
+  get 'general_shoping_list', to: 'shopping_lists#index', as: 'general_shopping_list'
+  get 'general_shoping_list/:recipe_id', to: 'shopping_lists#show'
 
   post 'foods/new', to: 'foods#create', as: 'create_new_food'
   post 'foods/delete', to: 'foods#delete', as: 'delete_food'

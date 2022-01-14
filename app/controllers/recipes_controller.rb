@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def public
     @recipes = Recipe.all
     @recipe_foods = RecipeFood.all
+    @foods = Food.all
   end
 
   def new
