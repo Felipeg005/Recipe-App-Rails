@@ -21,3 +21,24 @@
    text-decoration: none;
    color: inherit;
  }
+
+ input {
+   width: 100%;
+   border: 1px solid gray;
+   outline: none;
+ }
+
+ input[type=checkbox] {
+   width: 50px;
+ }
+
+ .new-recipe-form {
+   width: 500px;
+ }
+
+ .table-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
