@@ -1,0 +1,13 @@
+<h1>public recipes</h1>
+<% @recipes.each do |recipe| %>
+  <% if recipe.public %>
+    <a href="/recipes/<%= recipe.id %>">
+    <div class="recipe-container">
+      <h2><%= recipe.name %></h2>
+      <h2>By: <%= User.find(recipe.user_id).name %></h2>
+      <p>Total food items: <%= @recipe_foods.where(recipe_id: recipe.id).count %></p>
+      <p>Total price: $<%= Food.joins(:recipe_foods).where('recipe_foods.recipe_id' => recipe.id).sum('price * quantity') %></p>
+    </div>
+    </a>
+  <% end %>
+<% end %>

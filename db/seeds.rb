@@ -9,3 +9,4 @@
 User.create(name: 'Rupert', email: 'rupert@gmail.com', password: '1234567')
 Food.create(user_id: 1, name: 'Apple', measurement_unit: 'grams', price: 5)
 Food.create(user_id: 1, name: 'orange', measurement_unit: 'grams', price: 3)
+Recipe.create(user_id: 1, name: 'panna cotta', preparation_time: 1.4, cooking_time: 3, description: 'cook the bread 5 minutes', public: false)

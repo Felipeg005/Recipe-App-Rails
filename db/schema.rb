@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 4) do
     t.integer "user_id"
     t.string "name"
     t.string "measurement_unit"
-    t.integer "price"
+    t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "recipe_foods", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "food_id"
-    t.string "quantity"
+    t.decimal "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 4) do
   create_table "recipes", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.integer "preparation_time"
-    t.integer "coocking_time"
+    t.decimal "preparation_time"
+    t.decimal "cooking_time"
     t.string "description"
     t.boolean "public"
     t.datetime "created_at", precision: 6, null: false

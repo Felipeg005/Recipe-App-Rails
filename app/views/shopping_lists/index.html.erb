@@ -1,0 +1,19 @@
+<h1>General Shopping List</h1>
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+  </tr>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.user_id == current_user.id %>
+    <% RecipeFood.where(recipe_id: recipe.id).each do |food| %>
+    <tr>
+        <td><%= Food.find(food.food_id).name %></td>
+        <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
+        <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
+    </tr>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>

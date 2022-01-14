@@ -1,0 +1,17 @@
+<h1>Hello im Recipes</h1>
+<a href="<%= recipes_new_path %>">Add New Recipe</a>
+<% @recipes.each do |recipe| %>
+  <% if current_user.id == recipe.user_id %>
+    <a href="/recipes/<%= recipe.id %>">
+    <div class="recipe-container">
+      <h2><%= recipe.name %></h2>
+      <p><%= recipe.description %></p>
+      <% if recipe.user_id == current_user.id %>
+        <%= button_to "Delete", delete_recipe_path, params: { id: recipe.id } , method: :post %></td>
+      <% else %>
+        <td><p>Only owner can delete this Recipe</p></td>
+      <% end %>
+    </div>
+    </a>
+  <% end %>
+<% end %>
