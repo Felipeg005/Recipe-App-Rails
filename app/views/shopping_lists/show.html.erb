@@ -1,19 +1,19 @@
 <h1 class="recipe-title">Recipe # <%= params[:recipe_id] %> Shopping List</h1>
 <div class="table-container">
-<table>
-  <tr>
-    <th>Food</th>
-    <th>Quantity</th>
-    <th>Value</th>
-  </tr>
-  <% @recipe_foods.each do |food| %>
-    <% if @recipe.id == food.recipe_id %>
+  <table>
     <tr>
-      <td><%= Food.find_by_id(food.food_id).name %></td>
-      <td><%= food.quantity %> <%= Food.find_by_id(food.food_id).measurement_unit %></td>
-      <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
     </tr>
+    <% @recipe_foods.each do |food| %>
+      <% if @recipe.id == food.recipe_id %>
+      <tr>
+        <td><%= Food.find_by_id(food.food_id).name %></td>
+        <td><%= food.quantity %> <%= Food.find_by_id(food.food_id).measurement_unit %></td>
+        <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
+      </tr>
+      <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
 </div>

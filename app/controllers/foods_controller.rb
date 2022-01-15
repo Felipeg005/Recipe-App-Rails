@@ -34,7 +34,9 @@ class FoodsController < ApplicationController
 
   def delete
     @food = Food.find_by_id(params[:id])
-    if @food.destroy
+    if RecipeFood.find_by(food_id: params[:id])
+      flash[:notice] = 'Food cant be deleted because its in use in a recipe'
+    elsif @food.destroy
       flash[:success] = 'Food destroyed successfully'
     else
       flash[:error] = 'Error: Food could not be destroyed'

@@ -1,18 +1,18 @@
 <div class="food-button-container">
-<a class="add-food-button" href="<%= recipes_new_path %>">Add New Recipe</a>
+  <a class="add-food-button" href="<%= recipes_new_path %>">Add New Recipe</a>
 </div>
 <% @recipes.each do |recipe| %>
   <% if current_user.id == recipe.user_id %>
     <a href="/recipes/<%= recipe.id %>">
     <div class="recipe-container">
-    <div class="recipe-name-container">
-      <h2><%= recipe.name %></h2>
-      <% if recipe.user_id == current_user.id %>
-        <%= button_to "Delete", delete_recipe_path, params: { id: recipe.id } , class: 'recipe-d-button' , method: :post %></td>
-      <% else %>
-        <td><p>Only owner can delete this Recipe</p></td>
-      <% end %>
-      </div>
+      <div class="recipe-name-container">
+        <h2><%= recipe.name %></h2>
+        <% if recipe.user_id == current_user.id %>
+          <%= button_to "Delete", delete_recipe_path, params: { id: recipe.id } , class: 'recipe-d-button' , method: :post %></td>
+        <% else %>
+          <td><p>Only owner can delete this Recipe</p></td>
+        <% end %>
+        </div>
       <p class="recipe-description"><%= recipe.description %></p>
     </div>
     </a>
