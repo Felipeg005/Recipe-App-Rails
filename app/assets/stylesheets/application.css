@@ -17,6 +17,15 @@
    width: 100vw;
  }
 
+ td {
+   width: 160px;
+ }
+
+ hr {
+  background-color: black;
+  width: 70%;
+ }
+
  a,
  a:active {
    text-decoration: none;

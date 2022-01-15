@@ -43,3 +43,48 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.show-container { 
+  margin: 20px;
+}
+
+.recipe-title {
+  text-align: center;
+}
+
+.p-p-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.recipe-show-description {
+  margin-top: 25px;
+}
+
+.show-button {
+  padding: 10px;
+  background-color: gray;
+  border: 1px solid black;
+  color: white;
+}
+
+.public-img {
+  width: 30px;
+  height: 30px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-text {
+  margin: 0 10px;
+}
