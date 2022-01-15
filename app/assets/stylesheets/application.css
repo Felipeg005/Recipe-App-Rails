@@ -14,41 +14,41 @@
  *= require_self
  */
 body {
- width: 100vw;
+  width: 100vw;
 }
 
 td {
- width: 160px;
+  width: 160px;
 }
 
 hr {
- background-color: black;
- width: 70%;
+  background-color: black;
+  width: 70%;
 }
 
 a,
 a:active {
- text-decoration: none;
- color: black;
+  text-decoration: none;
+  color: black;
 }
 
 input {
- width: 100%;
- border: 1px solid gray;
- outline: none;
+  width: 100%;
+  border: 1px solid gray;
+  outline: none;
 }
 
 input[type=checkbox] {
- width: 50px;
+  width: 50px;
 }
 
 .new-recipe-form {
- width: 500px;
+  width: 500px;
 }
 
 .table-container {
- margin-top: 60px;
- width: 100%;
- display: flex;
- justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
