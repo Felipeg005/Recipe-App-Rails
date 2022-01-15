@@ -4,13 +4,12 @@
 .recipe-container {
   display: flex;
   align-items: center;
-  margin-top: 10px;
   border: 1px solid black;
   color: black;
   padding: 20px;
   width: 80%;
   align-self: center;
-  margin: 50px 0 0 10%;
+  margin: 50px 10px 0 10%;
 }
 
 .public-container {
@@ -44,7 +43,7 @@
   text-overflow: ellipsis;
 }
 
-.show-container { 
+.show-container {
   margin: 20px;
 }
 

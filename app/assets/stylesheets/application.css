@@ -13,42 +13,42 @@
  *= require_tree .
  *= require_self
  */
- body {
-   width: 100vw;
- }
+body {
+ width: 100vw;
+}
 
- td {
-   width: 160px;
- }
+td {
+ width: 160px;
+}
 
- hr {
-  background-color: black;
-  width: 70%;
- }
+hr {
+ background-color: black;
+ width: 70%;
+}
 
- a,
- a:active {
-   text-decoration: none;
-   color: black;
- }
+a,
+a:active {
+ text-decoration: none;
+ color: black;
+}
 
- input {
-   width: 100%;
-   border: 1px solid gray;
-   outline: none;
- }
+input {
+ width: 100%;
+ border: 1px solid gray;
+ outline: none;
+}
 
- input[type=checkbox] {
-   width: 50px;
- }
+input[type=checkbox] {
+ width: 50px;
+}
 
- .new-recipe-form {
-   width: 500px;
- }
+.new-recipe-form {
+ width: 500px;
+}
 
- .table-container {
-  margin-top: 60px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.table-container {
+ margin-top: 60px;
+ width: 100%;
+ display: flex;
+ justify-content: center;
 }
