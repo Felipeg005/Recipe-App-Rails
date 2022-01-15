@@ -1,4 +1,5 @@
-<h1>General Shopping List</h1>
+<h1 class="recipe-title">General Shopping List</h1>
+<div class="table-container">
 <table>
   <tr>
     <th>Food</th>
@@ -10,10 +11,11 @@
     <% RecipeFood.where(recipe_id: recipe.id).each do |food| %>
     <tr>
         <td><%= Food.find(food.food_id).name %></td>
-        <td><%= food.quantity %><%= Food.find_by_id(food.food_id).measurement_unit %></td>
+        <td><%= food.quantity %> <%= Food.find_by_id(food.food_id).measurement_unit %></td>
         <td>$<%= food.quantity * Food.find_by_id(food.food_id).price %></td>
     </tr>
       <% end %>
     <% end %>
   <% end %>
 </table>
+</div>

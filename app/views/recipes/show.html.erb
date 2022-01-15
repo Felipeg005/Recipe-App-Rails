@@ -1,12 +1,23 @@
-<h1>Recipe # <%= @recipe.id %></h1>
-<h2>Preparation Time: <%= @recipe.preparation_time %> Hours</h2>
-<h2>Public: <%= @recipe.public %></h2>
-<h2>Cooking Time: <%= @recipe.cooking_time %> Hours</h2>
-<p>Please follow these steps: <%= @recipe.description %></p>
-<% if @recipe.user_id == current_user.id %>
-  <a href="<%= recipe_foods_new_path %>">Add New Food</a>
-  <a href="/general_shopping_list/<%= @recipe.id %>">Generate shopping list</a>
+<div class="show-container">
+<h1 class="recipe-title">Recipe # <%= @recipe.id %></h1>
+<div class="p-p-container">
+<h6>Preparation Time: <%= @recipe.preparation_time %> Hours</h6>
+<% if @recipe.public %>
+<div class="img-container"><h6 class="img-text">Public: </h6><%= image_tag "on-button.png", class:"public-img" %></div>
+<% else %>
+<div class="img-container"><h6 class="img-text">Public: </h6><%= image_tag "off-button.png", class:"public-img" %></div>
 <% end %>
+</div>
+<h6 class="recipe-show-description">Cooking Time: <%= @recipe.cooking_time %> Hours</h6>
+<h6 class="recipe-show-description">Please follow these steps:</h6><p><%= @recipe.description %></p>
+<% if @recipe.user_id == current_user.id %>
+<div class="buttons-container">
+  <a class="show-button" href="<%= recipe_foods_new_path %>">Add New Food</a>
+  <a class="show-button" href="/general_shopping_list/<%= @recipe.id %>">Generate shopping list</a>
+</div>
+<% end %>
+<hr>
+<div class="table-container">
 <table>
   <tr>
     <th>Food</th>
@@ -29,3 +40,5 @@
     <% end %>
   <% end %>
 </table>
+</div>
+</div>

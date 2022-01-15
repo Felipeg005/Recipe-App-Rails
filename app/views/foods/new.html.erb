@@ -3,6 +3,7 @@
   <%= msg %>
 </div>
 <% end %>
+<div class="table-container">
 <%= form_with model: @food, url: create_new_food_path, method: :post, local: true do |f| %>
 <div class="new-food-form">
   <%= f.hidden_field :user_id, value: current_user.id %><br>
@@ -17,4 +18,5 @@
 
     <%= f.submit %>
 <% end %>
+</div>
 </div>

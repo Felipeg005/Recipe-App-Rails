@@ -4,6 +4,86 @@
 .recipe-container {
   display: flex;
   align-items: center;
-  margin-top: 10px;
   border: 1px solid black;
+  color: black;
+  padding: 20px;
+  width: 80%;
+  align-self: center;
+  margin: 50px 10px 0 10%;
+}
+
+.public-container {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.public-text {
+  margin: 0;
+}
+
+.recipe-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  inline-size: 50%;
+  overflow-wrap: break-word;
+}
+
+.recipe-d-button {
+  margin: 10px 0;
+  width: 100px;
+}
+
+.recipe-description {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.show-container {
+  margin: 20px;
+}
+
+.recipe-title {
+  text-align: center;
+}
+
+.p-p-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.recipe-show-description {
+  margin-top: 25px;
+}
+
+.show-button {
+  padding: 10px;
+  background-color: gray;
+  border: 1px solid black;
+  color: white;
+}
+
+.public-img {
+  width: 30px;
+  height: 30px;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+.img-text {
+  margin: 0 10px;
 }

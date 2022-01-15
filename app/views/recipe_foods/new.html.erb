@@ -3,6 +3,7 @@
   <%= msg %>
 </div>
 <% end %>
+<div class="table-container">
 <%= form_with model: @recipe_food, url: create_new_recipe_food_path, method: :post, local: true do |f| %>
 <div class="new-recipe-food-form">
   <%= f.hidden_field :recipe_id, value: params[:recipe_id] %><br>
@@ -14,4 +15,5 @@
 
     <%= f.submit %>
 <% end %>
+</div>
 </div>
