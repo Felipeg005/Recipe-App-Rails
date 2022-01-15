@@ -4,12 +4,12 @@
     <a href="/recipes/<%= recipe.id %>">
     <div class="recipe-container">
       <div class="recipe-name-container">
-      <h2><%= recipe.name %></h2>
-      <h4>By: <%= User.find(recipe.user_id).name %></h4>
+        <h2><%= recipe.name %></h2>
+        <h4>By: <%= User.find(recipe.user_id).name %></h4>
       </div>
       <div class="recipe-name-container">
-      <h6>Total food items: <%= @recipe_foods.where(recipe_id: recipe.id).count %></h6>
-      <h6>Total price: $<%= Food.joins(:recipe_foods).where('recipe_foods.recipe_id' => recipe.id).sum('price * quantity') %></h6>
+        <h6>Total food items: <%= @recipe_foods.where(recipe_id: recipe.id).count %></h6>
+        <h6>Total price: $<%= Food.joins(:recipe_foods).where('recipe_foods.recipe_id' => recipe.id).sum('price * quantity') %></h6>
       </div>
     </div>
     </a>

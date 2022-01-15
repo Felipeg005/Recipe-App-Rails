@@ -5,23 +5,23 @@
 <% end %>
 <div class="table-container">
 <%= form_with model: @recipe, url: create_new_recipe_path, method: :post, local: true do |f| %>
-<div class="new-recipe-form">
-  <%= f.hidden_field :user_id, value: current_user.id %><br>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
+  <div class="new-recipe-form">
+    <%= f.hidden_field :user_id, value: current_user.id %><br>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
 
-    <%= f.label :preparation_time %><br>
-    <%= f.number_field :preparation_time, placeholder: 'Hours', step: :any %><br>
+      <%= f.label :preparation_time %><br>
+      <%= f.number_field :preparation_time, placeholder: 'Hours', step: :any %><br>
 
-    <%= f.label :cooking_time %><br>
-    <%= f.number_field :cooking_time, placeholder: 'Hours', step: :any %><br>
+      <%= f.label :cooking_time %><br>
+      <%= f.number_field :cooking_time, placeholder: 'Hours', step: :any %><br>
 
-    <%= f.label :description %><br>
-    <%= f.text_field :description %><br>
+      <%= f.label :description %><br>
+      <%= f.text_field :description %><br>
 
-    <div class="public-container"><p class="public-text">Public: </p><%= f.check_box :public %></div><br>
+      <div class="public-container"><p class="public-text">Public: </p><%= f.check_box :public %></div><br>
 
-    <%= f.submit %>
-<% end %>
-</div>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
