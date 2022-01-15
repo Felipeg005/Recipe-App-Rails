@@ -34,12 +34,17 @@ class FoodsController < ApplicationController
 
   def delete
     @food = Food.find_by_id(params[:id])
-    if @food.destroy
-      flash[:success] = 'Food destroyed successfully'
+    if RecipeFood.find_by(food_id: params[:id])
+      flash[:notice] = 'Food cant be deleted because its in use in a recipe'
+      redirect_back(fallback_location: root_path)
     else
-      flash[:error] = 'Error: Food could not be destroyed'
+      if @food.destroy
+        flash[:success] = 'Food destroyed successfully'
+      else
+        flash[:error] = 'Error: Food could not be destroyed'
+      end
+      redirect_back(fallback_location: root_path)
     end
-    redirect_back(fallback_location: root_path)
   end
 
   private

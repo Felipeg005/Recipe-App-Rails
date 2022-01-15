@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+<div>
+  <%= msg %>
+</div>
+<% end %>
 <div class="food-button-container">
 <a class="add-food-button" href="<%= foods_new_path %>">Add New Food</a>
 </div>

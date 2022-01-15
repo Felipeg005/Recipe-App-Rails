@@ -45,6 +45,10 @@ class RecipesController < ApplicationController
 
   def delete
     @recipe = Recipe.find_by_id(params[:id])
+    @recipe_foods = RecipeFood.where(recipe_id: params[:id])
+    @recipe_foods.each do |recipe_food|
+      recipe_food.destroy
+    end
     if @recipe.destroy
       flash[:success] = 'Recipe destroyed successfully'
     else
