@@ -1,0 +1,19 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<div class="table-container">
+  <%= form_with model: @recipe_food, url: create_new_recipe_food_path, method: :post, local: true do |f| %>
+  <div class="new-recipe-food-form">
+    <%= f.hidden_field :recipe_id, value: params[:recipe_id] %><br>
+      <%= f.label :name %><br>
+      <%= f.select :food_id, Food.all.map { |food| food.name }, prompt: 'Select One' %><br>
+
+      <%= f.label :quantity %><br>
+      <%= f.text_field :quantity %><br>
+
+      <%= f.submit %>
+  <% end %>
+  </div>
+</div>
